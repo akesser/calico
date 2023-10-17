@@ -52,6 +52,10 @@ podLabels: {}
 # Image and registry configuration for the tigera/operator pod.
 tigeraOperator:
   image: tigera/operator
+  #### You can add arguments that will be added to the deployment of tigera-operator
+  # args:
+  #   - --cluster-type
+  #   - EKS
   version: master
   registry: quay.io
 calicoctl:

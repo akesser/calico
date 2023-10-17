@@ -41,6 +41,10 @@ spec:
       containers:
         - name: tigera-operator
           image: {{ template "tigera-operator.image" .Values.tigeraOperator}}
+{{- with .Values.tigeraOperator.args }}
+          args:
+            {{- toYaml . | nindent 12 }}
+{{- end }}
           imagePullPolicy: IfNotPresent
           command:
             - operator
